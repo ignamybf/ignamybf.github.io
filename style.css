@@ -1,101 +1,56 @@
-@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
-
+/* Style Settings */
+@import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
 :root {
-    --font:'Fredoka one', sans-serif;
-    --bgColor: rgb(0,0,0);
-    --accentColor: hsl(0, 100%, 81%);
-    --largeDeviceBg: url("https://images.unsplash.com/photo-1598063183638-4ffe7c5f0f8d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80");
-    --smallDeviceBg: url("https://png.pngtree.com/thumb_back/fw800/background/20210401/pngtree-peach-blossom-pink-mobile-phone-wallpaper-image_602515.jpg");
-    --grad:linear-gradient(rgb(10, 10, 10), rgb(53, 41, 46), rgb(162, 118, 131), rgb(205, 155, 164), rgb(250, 195, 197));
+    --bgColor:#1C1C1C;
+    --accentColor: #E6E6E6;
+    --font: 'Karla', sans-serif;
 }
-.shadow {
-   -moz-box-shadow:    inset 0 0 10px #000000;
-   -webkit-box-shadow: inset 0 0 10px #000000;
-   box-shadow:         inset 0 0 10px #000000;
+
+body{
+    background-color: var(--bgColor);
 }
-.links {
+
+#userPhoto{
+    width: 110px;
+    height: 110px;
+    display: block;
+    margin: 35px auto 20px;
+    border-radius: 50%;
+}
+
+#userName{
+    color: #bbb;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.25;
+    display: block;
+    font-family: var(--font);
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+#links{
     max-width: 675px;
     width: auto;
     display: block;
-    margin:30px auto;
+    margin: 27px auto;
 }
-body {
-    color: var(--bgColor);
-    background-color: royalblue;
-    background-image: var(--smallDeviceBg);
-    background-repeat:no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-
-} 
-
-
-.container{
-    margin: auto;
-    padding: 15px;
+.link{
     display: block;
-}
-.userName {
-    display: grid;
-    text-decoration: none;
-    color: var(--bgColor);
-    margin: auto;
-    text-align: center;
-    font-family: var(--font);
-    font-size: 20px;
-}
-.userPhoto {
-    margin: auto;
-    background-color: royalblue;
-    width: 110px;
-    height:110px;
-    display: grid;
-    border-radius: 50%; 
-    outline-color: black;
-    border: black;
-    margin: auto;
-    
-}
-@media only screen and (min-width:600px) {
-    body {
-        background-color: royalblue;
-        background-image: var(--largeDeviceBg);
-        background-size: cover;
-        box-sizing: border-box;
-        box-sizing: 100%;
-    } 
-    .links {
-        max-width: 675px;
-        width: auto;
-        display: block;
-        margin:30px auto;
-    }
-}
-.link {
-    display: grid;
-    text-decoration: none;
-    font-size: 1.7em;
-    font-family: var(--font);
-    margin: auto;
-    color: var(--bgColor);
     background-color: var(--accentColor);
+    color: var(--bgColor);
+    font-family: var(--font);
+    text-align: center;
     margin-bottom: 20px;
-    transition: all .25s cubic-bezier(.08, .59, .29, .99);
-    box-sizing: border-box;
-    border-radius: 25px;
-    padding: 15px;
-    grid-template-columns: auto auto;
-    grid-gap: 15px;
-    border: solid var(--grad) 20px;
-
+    padding: 17px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all .25s cubic-bezier(.08,.59,.29,.99);
+    border: solid var(--accentColor) 2px;
 }
 
-.link > img{
-    font-size: 25px;
-}
-
-.link:hover {
+.link:hover{
     background-color: var(--bgColor);
     color: var(--accentColor);
-    
 }
