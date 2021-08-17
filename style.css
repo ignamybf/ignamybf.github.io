@@ -1,196 +1,100 @@
-@font-face {
-	font-family: "Brandon Light";
-}
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
 
 :root {
-    --color: red;
+    --font:'Fredoka one', sans-serif;
+    --bgColor: rgb(0,0,0);
+    --accentColor: hsl(0, 100%, 81%);
+    --largeDeviceBg: url("https://images.unsplash.com/photo-1598063183638-4ffe7c5f0f8d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80");
+    --smallDeviceBg: url("https://png.pngtree.com/thumb_back/fw800/background/20210401/pngtree-peach-blossom-pink-mobile-phone-wallpaper-image_602515.jpg");
+    --grad:linear-gradient(rgb(10, 10, 10), rgb(53, 41, 46), rgb(162, 118, 131), rgb(205, 155, 164), rgb(250, 195, 197));
 }
-
+.shadow {
+   -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+}
+.links {
+    max-width: 675px;
+    width: auto;
+    display: block;
+    margin:30px auto;
+}
 body {
-	margin: 0;
-	padding: 0;
-	background-color: black;
-	overflow: hidden;
-	font-family: "Brandon Light";
-	color: white;
-	user-select: none;
-}
+    color: var(--bgColor);
+    background-color: royalblue;
+    background-image: var(--smallDeviceBg);
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 
-a {
-	color: white;
-	text-decoration: none;
-	padding: 0;
-}
-
-.center {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
-
-#border {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	box-sizing: border-box;
-	pointer-events: none;
-	z-index: -1;
-}
+} 
 
 
-#borderTop, #borderBottom {
-	position: absolute;
-	width: 0%;
-	height: 4px;
-	background-color: purple;
+.container{
+    margin: auto;
+    padding: 15px;
+    display: block;
+}
+.userName {
+    display: grid;
+    text-decoration: none;
+    color: var(--bgColor);
+    margin: auto;
+    text-align: center;
+    font-family: var(--font);
+    font-size: 20px;
+}
+.userPhoto {
+    margin: auto;
+    background-color: royalblue;
+    width: 110px;
+    height:110px;
+    display: grid;
+    border-radius: 50%; 
+    outline-color: black;
+    border: black;
+    margin: auto;
+    
+}
+@media only screen and (min-width:600px) {
+    body {
+        background-color: royalblue;
+        background-image: var(--largeDeviceBg);
+        background-size: cover;
+        box-sizing: border-box;
+        box-sizing: 100%;
+    } 
+    .links {
+        max-width: 675px;
+        width: auto;
+        display: block;
+        margin:30px auto;
+    }
+}
+.link {
+    display: grid;
+    text-decoration: none;
+    font-size: 1.7em;
+    font-family: var(--font);
+    margin: auto;
+    color: var(--bgColor);
+    background-color: var(--accentColor);
+    margin-bottom: 20px;
+    transition: all .25s cubic-bezier(.08, .59, .29, .99);
+    box-sizing: border-box;
+    border-radius: 25px;
+    padding: 15px;
+    grid-template-columns: auto auto;
+    grid-gap: 15px;
+    border: solid var(--grad) 20px;
+
 }
 
-#borderRight, #borderLeft {
-	position: absolute;
-	width: 3px;
-	height: 0%;
-	background-color: purple;
+.link > img{
+    font-size: 25px;
 }
 
-video {
-	position: fixed;
-	right: 0;
-	bottom: 0;
-	min-width: 100%;
-	min-height: 100%;
-	z-index: -2;
-	filter: blur(5px) brightness(30%);
-	pointer-events: none;
-}
-
-#clickToPlay {
-	opacity: 0;
-	transition: 1s;
-	position: absolute;
-	color: white;
-	font-size: 64px;
-	cursor: default;
-	width: 100%;
-	height: 100%;
-	z-index: 10;
-}
-
-#main {
-	opacity: 0;
-	transition: 5s;
-}
-
-pre {
-	font-weight: bold;
-	font-size: 16px;
-	user-select: none;
-	color: purple;
-	background: repeating-linear-gradient(120deg, orange 0%, yellow 12.5%, red 37.5%, orange 60%);
-	background-size: 60vw 60vw;
-	-webkit-text-fill-color: transparent;
-	-webkit-background-clip: text;
-	animation: slide 5s linear infinite forwards;
-}
-
-@keyframes slide {
-	0% {
-		background-position-x: 0%;
-	}
-	100% {
-		background-position-x: 60vw;
-	}
-}
-
-#widgetContainer {
-	opacity: 0;
-	position: absolute;
-	right: 20px;
-	top: 20px;
-	width: 400px;
-	height: 38px;
-	background: repeating-linear-gradient(120deg, pink 0%, purple 12.5%, white 37.5%, pink 60%);
-	background-size: 60vw 60vw;
-	animation: slide 10s linear infinite forwards;
-	transition: 1s;
-}
-
- #widget {
-	position: absolute;
-	width: 394px;
-	height: 29px;
-	margin: 3px;
-	background-color: purple;
-	z-index: 1;
-	transition: 2s;
-	
-}
-
-#widgetMain {
-	position: absolute;
-	display: inline-flex;
-	justify-content: space-between;
-	margin-top: 3px;
-	padding-right: 10px;
-	padding-left: 10px;
-	width: 374px;
-	height: 29px;
-	z-index: 2;
-	background-color: purple;
-}
-
-#burgerMenu {
-	cursor: pointer;
-}
-
-#dropDownContent {
-	display: none;
-	opacity: 0;
-	transition: 2s;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	margin-top: 30px;
-}
-
-#links {
-	right: 5px;
-	width: 100px;
-	float: left;
-	margin-top: -4px;
-}
-
-#groups {
-	float: right;
-	margin-top: 5px;
-}
-
-#dropDownContent div a {
-	opacity: 0;
-	transition: 1s;
-	line-height: 18px;
-}
-
-#dropDownContent div span {
-	margin-left: 10px;
-	margin-right: 10px;
-}
-
-#groups a, #groups span {
-	float: right;
-}
-
-.hitCount {
-	position: fixed;
-	bottom: 5px;
-	right: 5px;
-	transition: 3s;
-	color: var(--color);
-	font-size: 24px;
-	opacity: 0;
-	bottom: -3px;
-}
-
-a.hitCounter.badge-done0 {
-	display: none!important;
-}
+.link:hover {
+    background-color: var(--bgColor);
+    color: var(--accentColor);
+    
